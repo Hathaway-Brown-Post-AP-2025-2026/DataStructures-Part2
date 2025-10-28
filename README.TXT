@@ -1,12 +1,7 @@
-------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all they need to know. The comments should usually include at least:
-------------------------------------------------------------------------
+Project Files from Post-AP Computer Science at Hathaway Brown
+Lots of Data Structures!
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+Everything here was written by mbuescher or by mhoughton26
+
+
+
