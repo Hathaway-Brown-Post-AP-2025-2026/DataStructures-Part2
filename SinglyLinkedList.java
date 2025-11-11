@@ -24,6 +24,19 @@ public class SinglyLinkedList<T>
         tail = n;
     }
     
+    /** Add a new item to the end of the list    */
+    public void add (T val)
+    {
+        Node<T> n = new Node<T>(val);
+        if (head == null) {
+            head = n;
+        }
+        if (tail != null) {
+            tail.setNext(n);
+        }
+        tail = n;
+    }
+    
     /** Returns the list as a comma-delimited String  */
     public String toString()
     {
