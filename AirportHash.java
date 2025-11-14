@@ -14,15 +14,17 @@ import java.util.LinkedList;
 public class AirportHash
 {
     private LinkedList<Airport>[] airports;
-    public static final int TABLE_SIZE = 3000;
+    public int TABLE_SIZE;
+    private int count;
     
     /**
      * The constructor loads the Airports from a .csv file
      */
-    public AirportHash ()
+    public AirportHash (int size)
     {
+        TABLE_SIZE = size;
         airports = (LinkedList<Airport>[])new LinkedList[TABLE_SIZE];
-        
+        count = 0;
 
         Scanner dataFile;
         
@@ -38,8 +40,7 @@ public class AirportHash
             System.out.println("*** Cannot open the Airport data file ***");
             System.exit(1);        // quit the program
         } 
-
-        int count = 0;
+        
         while (dataFile.hasNext())
         {
             String nextAir = dataFile.nextLine();
@@ -55,6 +56,7 @@ public class AirportHash
             if (airports[index] == null) {
                 airports[index] = new LinkedList<Airport>();
             }
+            
             airports[index].add(myAirport);
             
             count++;
@@ -107,6 +109,7 @@ public class AirportHash
         double nullPct = (nullCount * 100.0) / TABLE_SIZE;
         double singlePct = (singleCount * 100.0) / TABLE_SIZE;
         double avgLength = (1.0 * totalCount) / (TABLE_SIZE - nullCount);
+        System.out.println (count + " airports, TABLE_SIZE = " + TABLE_SIZE);
         System.out.println ("null:     " + nullCount + "    " + nullPct + " %");
         System.out.println ("singles:  " + singleCount + "    " + singlePct + " %");
         System.out.println ("Longest:  " + maxLength);

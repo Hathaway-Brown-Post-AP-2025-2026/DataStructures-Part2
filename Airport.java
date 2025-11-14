@@ -17,10 +17,16 @@ public class Airport
         ataCode = code;
         city = cityName;
         location = locPlace;
+        offset = 0;
     }
     
     public int getOffset ()        { return offset;  }
     public void setOffset (int o)  { offset = o;  }
+    
+    public boolean equals (Airport other)
+    {
+        return (this.ataCode == other.ataCode);
+    }
     
     public String toString ()
     {
@@ -50,5 +56,10 @@ public class Airport
         ans += (char)((n % 26) + 65);
         
         return ans;
+    }
+    
+    public int getHash (int mod)
+    {
+        return ataToInt(ataCode) % mod;
     }
 }
